@@ -1,0 +1,90 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:#033348;
+  padding: 12px 24px;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Brand */
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Links container */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+}
+
+/* Link styles */
+.navbar-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+  color: #ffdd57;
+}
+
+/* Hamburger button (hidden on desktop) */
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .navbar {
+    padding: 12px 16px;
+  }
+
+  /* Show hamburger icon */
+  .navbar-toggle {
+    display: block;
+  }
+
+  /* Hide links by default */
+  .navbar-links {
+    position: absolute;
+    top: 56px; /* height of navbar */
+    right: 0;
+    background-color: #033348;
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 10;
+    padding: 1rem;
+  }
+
+  /* When open, expand links */
+  .navbar-links.open {
+    max-height: 200px; /* enough to show all items */
+  }
+
+  /* Links take full width */
+  .navbar-links li {
+    margin: 12px 0;
+    text-align: center;
+  }
+
+  .navbar-links li a {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+  }
+}

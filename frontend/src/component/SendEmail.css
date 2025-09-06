@@ -1,0 +1,244 @@
+/* Container */
+.send-email-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+}
+
+/* Title */
+.title {
+  text-align: center;
+  font-size: 1.75rem;
+  margin-bottom: 1.25rem;
+  color: #333333;
+}
+
+/* Field Group */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+/* Labels */
+.label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #555555;
+}
+
+/* Inputs and Dropdown */
+.input,
+.dropdown {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.input:focus,
+.dropdown:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+/* Preview Card (and Edit Form) */
+.preview-card {
+  position: relative; /* for positioning the edit icon */
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Edit Icon (top-right) */
+.edit-icon {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.edit-icon:hover {
+  transform: scale(1.1);
+}
+
+/* View Mode Subject */
+.preview-subject {
+  margin: 0 0 0.75rem 0;
+  font-size: 1.2rem;
+  color: #222222;
+}
+
+/* View Mode Body */
+.preview-body {
+  font-size: 1rem;
+  color: #444444;
+  line-height: 1.5;
+}
+
+/* Attachment Link */
+.attachment-link {
+  margin-top: 0.75rem;
+}
+.attachment-link a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+.attachment-link a:hover {
+  text-decoration: underline;
+}
+
+/* Variables Section */
+.variables-section {
+  margin-top: 1rem;
+}
+
+.variables-title {
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  color: #333333;
+}
+
+/* EDIT MODE: form inside the preview card */
+.edit-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-form .field-group {
+  margin-bottom: 0.75rem;
+}
+
+/* Edit Buttons (Save / Cancel) */
+.edit-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.save-button,
+.cancel-button {
+  flex: 1;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.save-button {
+  background-color: #28a745;
+  color: #ffffff;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.save-button:disabled {
+  background-color: #94d3a2;
+  cursor: not-allowed;
+}
+
+.save-button:hover:not(:disabled) {
+  background-color: #218838;
+  box-shadow: 0 0 6px rgba(33, 136, 56, 0.4);
+}
+
+.cancel-button {
+  background-color: #dc3545;
+  color: #ffffff;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.cancel-button:disabled {
+  background-color: #f5a6ab;
+  cursor: not-allowed;
+}
+
+.cancel-button:hover:not(:disabled) {
+  background-color: #c82333;
+  box-shadow: 0 0 6px rgba(200, 35, 51, 0.4);
+}
+
+/* Send Button */
+.send-button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #007bff;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.send-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.send-button:hover:not(:disabled) {
+  background-color: #0056b3;
+  box-shadow: 0 0 8px rgba(0, 86, 179, 0.4);
+}
+
+/* Status Message */
+.status-message {
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: 500;
+  color: #d9534f; /* Red by default */
+}
+
+.status-message:before {
+  content: 'ℹ️ ';
+}
+
+/* Success State */
+.status-message.success {
+  color: #28a745; /* Green */
+}
+
+.status-message.success:before {
+  content: '✅ ';
+}
+
+/* New: Textarea for editing Body */
+.textarea {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+/* Adjust spacing inside edit-form if needed */
+.edit-form .field-group {
+  margin-bottom: 1rem;
+}
+
+/* (The rest of your CSS stays exactly the same as before) */
