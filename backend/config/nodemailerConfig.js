@@ -7,14 +7,14 @@ export const sendEmailFunction = async (to, subject, text, attachmentFileName = 
     secure: true,
     port: 465,
     auth: {
-      user: 'akashgupta.webdev@gmail.com',
-      pass: 'iipd ycvn jmpo mefu',
+      user: 'prachidbg.111@gmail.com',
+      pass: 'ykhc ynww cowr dunj',
     },
   });
 
   // Define base mail options
   const mailOptions = {
-    from: 'akashgupta.webdev@gmail.com',
+    from: 'prachidbg.111@gmail.com',
     to: to,
     html: text,
     subject: subject,

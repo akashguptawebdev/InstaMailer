@@ -3,8 +3,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './CreateNewTemplate.css';
 import { BASEURL } from '../utils';
-
+import { useNavigate } from 'react-router-dom';
 const CreateNewTemplate = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     subject: '',
@@ -57,7 +58,7 @@ const CreateNewTemplate = () => {
       if (formData.resume) {
         data.append('resume', formData.resume);
       }
-
+      console.log("BASEURL",BASEURL)
       const res = await axios.post(
         `${BASEURL}/api/v1/email/createEmailTemplate`,
         data,
@@ -69,16 +70,25 @@ const CreateNewTemplate = () => {
         }
       );
 
-      setStatusType('success');
-      setStatusMessage('Template created successfully.');
-      // Optionally reset form:
-      setFormData({
-        name: '',
-        subject: '',
-        body: '',
-        status: 'active',
-        resume: null,
-      });
+      if (res?.data?.success) { // <-- Fix: Check res.data.success
+        setStatusType('success');
+        setStatusMessage('Template created successfully.');
+
+        setFormData({
+          name: '',
+          subject: '',
+          body: '',
+          status: 'active',
+          resume: null,
+        });
+
+        // Redirect to home after a small delay
+        setTimeout(() => {
+          navigate('/'); // <-- Redirect to home
+        }, 1500);
+      }
+
+      
     } catch (error) {
       console.error('Error submitting template:', error);
       setStatusType('error');
